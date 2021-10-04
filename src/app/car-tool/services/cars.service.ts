@@ -17,7 +17,8 @@ export class CarsService {
   }
 
   private getElementUrl(elementId: any) {
-    return this._baseUrl + '/' + encodeURIComponent(String(elementId));
+    console.log(encodeURIComponent(String(elementId)));
+    return this._baseUrl + '/' + (String(elementId));
   }
 
   all() {
