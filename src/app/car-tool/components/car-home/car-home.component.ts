@@ -4,8 +4,8 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from '../../../app-state';
 import { Car } from '../../models/car';
 import {
-  refreshCarsRequest, appendCarRequest, replaceCarRequest, editCar, cancelCar
-} from "../../car.actions";
+  refreshCarsRequest, appendCarRequest, replaceCarRequest, editCar, deleteCarRequest, cancelCar
+} from '../../car.actions';
 
 @Component({
   selector: 'car-home',
@@ -35,6 +35,10 @@ export class CarHomeComponent implements OnInit {
 
   doEditCar(carId: number) {
     this.store.dispatch(editCar({ carId }));
+  }
+
+  doDeleteCar(carId: number) {
+    this.store.dispatch(deleteCarRequest({ carId }));
   }
 
   doCancelCar() {
